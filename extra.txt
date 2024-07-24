@@ -1,0 +1,26 @@
+<?php
+			   
+			   $res1="select sum(cons) from lowercons where division='Bongaigaon'";
+			   $res2="select sum(amt3) from lowerpayment where division='Bongaigaon'";
+			   
+			   
+			   $query_run1=mysqli_query($con,$res1);
+			   $query_run2=mysqli_query($con,$res2);
+			
+		        while($row1 = mysqli_fetch_array($query_run1) and $row2 = mysqli_fetch_array($query_run2))
+				{
+				 ?>
+                <tr>
+                  
+                  <td><a class="btn btn-outline-info">Bongaigaon</a></td>
+                  <td><?php echo $row1['sum(cons)']?></td>
+                  <td><?php echo $row2['sum(amt3)']?></td>
+                  <td>7</td>
+                  <td>8</td>
+				  
+				  
+				 </tr>
+				  <?php
+                }
+               ?>
+              
